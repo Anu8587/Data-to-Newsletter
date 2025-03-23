@@ -92,7 +92,7 @@ async function fetchStockPrices() {
 }
 
 // Update every 3 seconds
-setInterval(fetchStockPrices, 300); // change for 3 seconds 300
+setInterval(fetchStockPrices, 3000000); // change for 3 seconds 300
 fetchStockPrices();
 
 
