@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Dashboard</title>
+    <link rel="stylesheet" href="landing.css">
+    <script defer src="landing.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="finance-dashboard">
+        <!-- Sidebar -->
+        <nav class="finance-sidebar">
+            <ul>
+                <li class="finance-toggle" onclick="toggleSidebar()">
+                    <i class="fas fa-bars"></i> <span class="finance-text"> Menu</span>
+                </li>
+                <li class="active" onclick="showFinanceSection('finance-overview')">
+                    <i class="fas fa-user"></i> <span class="finance-text"> User Overview</span>
+                </li>
+                <li onclick="showFinanceSection('finance-portfolio')">
+                    <i class="fas fa-wallet"></i> <span class="finance-text">Portfolio Management</span>
+                </li>
+                
+                <li onclick="showFinanceSection('finance-search')">
+                    <i class="fas fa-search"></i> <span class="finance-text"> Search Stocks</span>
+                </li>
+                
+                <li onclick="showFinanceSection('finance-ai-insights')">
+                    <i class="fas fa-brain"></i> <span class="finance-text"> AI Insights</span>
+                </li>
+                <li onclick="showFinanceSection('finance-news')">
+                    <i class="fas fa-newspaper"></i> <span class="finance-text"> News & Events</span>
+                </li>
+               
+                
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="finance-main">
+            <section id="finance-overview" class="finance-section">User Overview Content
+              <div class="profile-header">
+                
+                <h2>YOUR MARKET IS IN</h2>
+                <h1>GREEN ZONE</h1>
+            </div>
+            <div class="profile-content">
+                <div class="profile-pic">
+                    <img src="user_image.jpg" alt="Profile Picture">
+                </div>
+                <div class="profile-details">
+                    <h2>Alice</h2>
+                    <p>Email: Alice@example.com</p>
+                    <p>Phone: +1234567890</p>
+                    <p>Amount Invested: Rs 50000</p>
+                    <p>Member Since: January 2020</p>
+                </div>
+            </div>
+            <div class="profile-actions">
+                <button>Edit Profile</button>
+                <button>Newsletter</button>
+                <button>Logout</button>
+            </div>
+
+
+            </section>
+
+
+            <section id="finance-portfolio" class="finance-section">
+              
+              
+              <div class="stock-container2">
+                <!-- Left Sidebar for Stock Selection -->
+                <div class="sidebar">
+                  <h2>Select Stocks</h2>
+                  <div id="stock-container">
+                  <ul id="stock-list">
+                    <li><input type="checkbox" value="AAPL"> Apple</li>
+                    <li><input type="checkbox" value="MSFT"> Microsoft</li>
+                    <li><input type="checkbox" value="GOOGL"> Google</li>
+                    <li><input type="checkbox" value="AMZN"> Amazon</li>
+                    <li><input type="checkbox" value="TSLA"> Tesla</li>
+                    <li><input type="checkbox" value="NVDA"> Nvidia</li>
+                    <li><input type="checkbox" value="META"> Meta (Facebook)</li>
+                    <li><input type="checkbox" value="NFLX"> Netflix</li>
+                    <li><input type="checkbox" value="AMD"> AMD</li>
+                    <li><input type="checkbox" value="INTC"> Intel</li>
+                    <li><input type="checkbox" value="BABA"> Alibaba</li>
+                    <li><input type="checkbox" value="ORCL"> Oracle</li>
+                    <li><input type="checkbox" value="IBM"> IBM</li>
+                    <li><input type="checkbox" value="CSCO"> Cisco</li>
+                    <li><input type="checkbox" value="PYPL"> PayPal</li>
+                    <li><input type="checkbox" value="UBER"> Uber</li>
+                    <li><input type="checkbox" value="LYFT"> Lyft</li>
+                    <li><input type="checkbox" value="ADBE"> Adobe</li>
+                    <li><input type="checkbox" value="CRM"> Salesforce</li>
+                    <li><input type="checkbox" value="DIS"> Disney</li>
+                    <li><input type="checkbox" value="PEP"> PepsiCo</li>
+                    <li><input type="checkbox" value="KO"> Coca-Cola</li>
+                    <li><input type="checkbox" value="WMT"> Walmart</li>
+                    <li><input type="checkbox" value="COST"> Costco</li>
+                    <li><input type="checkbox" value="JNJ"> Johnson & Johnson</li>
+                    <li><input type="checkbox" value="PFE"> Pfizer</li>
+                    <li><input type="checkbox" value="XOM"> ExxonMobil</li>
+                    <li><input type="checkbox" value="BA"> Boeing</li>
+                    <li><input type="checkbox" value="NKE"> Nike</li>
+                    <li><input type="checkbox" value="MCD"> McDonald's</li>
+                </ul>
+              </div>
+              <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-hotlists.js" async>
+          {
+          "colorTheme": "dark",
+          "dateRange": "12M",
+          "exchange": "US",
+          "showChart": true,
+          "locale": "en",
+          "width": "100%",
+          "height": "100%",
+          "largeChartUrl": "",
+          "isTransparent": false,
+          "showSymbolLogo": false,
+          "showFloatingTooltip": false,
+          "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
+          "plotLineColorFalling": "rgba(41, 98, 255, 1)",
+          "gridLineColor": "rgba(42, 46, 57, 0)",
+          "scaleFontColor": "rgba(219, 219, 219, 1)",
+          "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
+          "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
+          "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
+          "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
+          "symbolActiveColor": "rgba(41, 98, 255, 0.12)"
+        }
+          </script>
+        </div>
+        <!-- TradingView Widget END -->
+                
+                  
+              </div>
+                    
+                <!-- Right Side Chart -->
+                <main class="chart-container">
+                    <h2>Your Portfolio</h2>
+                    <div id="chart"></div>
+                </main>
+
+                
+            </div>
+
+
+            <div class="market-summary">
+              <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
+                {
+                  "symbols": [
+                    ["Apple", "AAPL|1D"],
+                    ["Google", "GOOGL|1D"],
+                    ["Microsoft", "MSFT|1D"],
+                    ["Amazon", "NASDAQ:AMZN|1D"],
+                    ["Tesla", "NASDAQ:TSLA|1D"]
+                  ],
+                  "chartOnly": false,
+                  "width": "100%",
+                  "height": "100%",
+                  "locale": "en",
+                  "colorTheme": "dark",
+                  "autosize": true,
+                  "showVolume": false,
+                  "showMA": false,
+                  "hideDateRanges": false,
+                  "hideMarketStatus": false,
+                  "hideSymbolLogo": false,
+                  "scalePosition": "right",
+                  "scaleMode": "Normal",
+                  "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+                  "fontSize": "10",
+                  "noTimeScale": false,
+                  "valuesTracking": "1",
+                  "changeMode": "price-and-percent",
+                  "chartType": "area",
+                  "maLineColor": "#2962FF",
+                  "maLineWidth": 1,
+                  "maLength": 9,
+                  "headerFontSize": "medium",
+                  "lineWidth": 2,
+                  "lineType": 0,
+                  "dateRanges": [
+                    "1d|1",
+                    "1m|30",
+                    "3m|60",
+                    "12m|1D",
+                    "60m|1W",
+                    "all|1M"
+                  ]
+                }
+                </script>
+              </div>
+            </div>
+            
+            
+            
+            
+            </section>
+
+
+
+            <section id="finance-search" class="finance-section">
+
+              <!-- TradingView Widget BEGIN -->
+<div class="tradingview1-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+  {
+  "width": "100%",
+  "height": "500",
+  "symbol": "NASDAQ:AAPL",
+  "interval": "1",
+  "timezone": "Etc/UTC",
+  "theme": "dark",
+  "style": "1",
+  "locale": "en",
+  "allow_symbol_change": true,
+  "support_host": "https://www.tradingview.com"
+}
+  </script>
+</div>
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500 Index"
+    },
+    {
+      "proName": "FOREXCOM:NSXUSD",
+      "title": "US 100 Cash CFD"
+    },
+    {
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR to USD"
+    },
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "Bitcoin"
+    },
+    {
+      "proName": "BITSTAMP:ETHUSD",
+      "title": "Ethereum"
+    }
+  ],
+  "showSymbolLogo": true,
+  "isTransparent": false,
+  "displayMode": "adaptive",
+  "colorTheme": "dark",
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+<!-- TradingView Widget END -->
+            </section>
+
+
+            <section id="finance-ai-insights" class="finance-section">AI Insights Content</section>
+
+
+
+            <section id="finance-news" class="finance-section">News & Events Content
+              
+
+              <h2 class="heading">NEWSLETTER</h2>
+              <p class="description">Newsletter content</p>
+              
+              <header class="header">
+                  <h2>News and Upcoming events</h2>
+              </header>
+
+              <section class="section">
+                  <nav class="nav">
+                      <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container">
+                      <div class="tradingview-widget-container__widget"></div>
+                      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
+                      {
+                      "feedMode": "all_symbols",
+                      "isTransparent": false,
+                      "displayMode": "adaptive",
+                      "width": "400",
+                      "height": "550",
+                      "colorTheme": "light",
+                      "locale": "en"
+                    }
+                      </script>
+                    </div>
+                    <!-- TradingView Widget END -->
+                  </nav>
+
+                  <article class="article">
+                      <!-- TradingView Widget BEGIN -->
+                      <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget"></div>
+                        
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+                        {
+                        "width": "100%",
+                        "height": "100%",
+                        "colorTheme": "light",
+                        "isTransparent": false,
+                        "locale": "en",
+                        "importanceFilter": "-1,0,1",
+                        "countryFilter": "ar,au,br,ca,cn,fr,de,in,id,it,jp,kr,mx,ru,sa,za,tr,gb,us,eu"
+                      }
+                        </script>
+                      </div>
+                      <!-- TradingView Widget END -->
+                  </article>
+              </section>
+
+              
+
+
+
+                      </section>
+                      
+
+
+
+                    
+
+
+
+
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="landing.js"></script>
+</body>
+</html>
