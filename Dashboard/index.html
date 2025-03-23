@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section style="text-align: center; padding: 20px; background: transparent; color: rgb(0, 0, 0); border-bottom: 5px solid #78ace7;">
+    <h1 style="margin-bottom: 10px; font-size: 2rem;">Welcome to Your Financial Dashboard</h1>
+    <p style="font-size: 1.2rem; max-width: 800px; margin: auto;">
+        Track real-time stock prices, market trends, and financial news all in one place. Stay ahead with insights into global indices, futures, bonds, forex, and more.
+    </p>
+</section>
+  <div class="dashboard-container">
+      <aside class="sidebar">
+          <button onclick="showContent('market-trends')">Stock Price Trends</button>
+          <button onclick="showContent('stock-price-trends')">Market Trends</button>
+          <button onclick="showContent('financial-news')">Financial News</button>
+          <button onclick="showContent('search-stocks')">Search Stocks</button>
+      </aside>
+      
+      <main class="dashboard-content">
+          <div id="market-trends" class="content-section" style="display: block;"> 
+              <h2>Stock Price Trends</h2>
+              <div id="market-trends-content">Loading Market Trends...</div>
+
+              <!-- Market Trends Section -->
+              <div class="dropdown-container">
+                <label for="stock-symbols">Select Stocks</label>
+                <select id="stock-symbols" multiple>
+                  <option value="AAPL">AAPL</option>
+                  <option value="GOOGL">GOOGL</option>
+                  <option value="MSFT">MSFT</option>
+                  <option value="TSLA">TSLA</option>
+                  <option value="RELIANCE">RELIANCE</option>
+                  <option value="TCS">TCS</option>
+                  <option value="INFY">INFY</option>
+                  <option value="HDFC_BANK">HDFC</option>
+                  <option value="KOTAKBANK">KOTAK</option>
+                  <option value="ITC">ITC</option>
+                  <option value="HUL">HUL</option>
+                  <option value="ICICIBANK">ICICI</option>
+                  <option value="SBI">SBI</option>
+                  <option value="BHARTIARTL">AIRTEL</option>
+                  <option value="L&T">L&T</option>
+                  <option value="HDFC">HDFC</option>
+                  <option value="NESTLEIND">NESTLE</option>
+                  <option value="TITAN">TITAN</option>
+                  <option value="ASIANPAINT">ASIAN</option>
+                  <option value="MARUTI">MARUTI</option>
+                  <option value="M&M">M&M</option>
+                  <option value="ULTRACEMCO">ULTRA</option>
+                  <option value="BAJAJ-AUTO">BAJAJ</option>
+                </select>
+              </div>
+              <button onclick="fetchMultipleStockData()">Fetch Data</button>
+          </div>
+
+          <div id="stock-price-trends" class="content-section" style="display: none;">
+              <h2>Market Trends</h2>
+              <div id="stock-trends-content"> <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                  <div class="tradingview-widget-container__widget"></div>
+                
+                  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
+                  {
+                  "width": "100%",
+                  "height": "100%",
+                  "symbolsGroups": [
+                    {
+                      "name": "Indices",
+                      "originalName": "Indices",
+                      "symbols": [
+                        {
+                          "name": "FOREXCOM:SPXUSD",
+                          "displayName": "S&P 500 Index"
+                        },
+                        {
+                          "name": "FOREXCOM:NSXUSD",
+                          "displayName": "US 100 Cash CFD"
+                        },
+                        {
+                          "name": "FOREXCOM:DJI",
+                          "displayName": "Dow Jones Industrial Average Index"
+                        },
+                        {
+                          "name": "INDEX:NKY",
+                          "displayName": "Japan 225"
+                        },
+                        {
+                          "name": "INDEX:DEU40",
+                          "displayName": "DAX Index"
+                        },
+                        {
+                          "name": "FOREXCOM:UKXGBP",
+                          "displayName": "FTSE 100 Index"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Futures",
+                      "originalName": "Futures",
+                      "symbols": [
+                        {
+                          "name": "CME_MINI:ES1!",
+                          "displayName": "S&P 500"
+                        },
+                        {
+                          "name": "CME:6E1!",
+                          "displayName": "Euro"
+                        },
+                        {
+                          "name": "COMEX:GC1!",
+                          "displayName": "Gold"
+                        },
+                        {
+                          "name": "NYMEX:CL1!",
+                          "displayName": "WTI Crude Oil"
+                        },
+                        {
+                          "name": "NYMEX:NG1!",
+                          "displayName": "Gas"
+                        },
+                        {
+                          "name": "CBOT:ZC1!",
+                          "displayName": "Corn"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Bonds",
+                      "originalName": "Bonds",
+                      "symbols": [
+                        {
+                          "name": "CBOT:ZB1!",
+                          "displayName": "T-Bond"
+                        },
+                        {
+                          "name": "CBOT:UB1!",
+                          "displayName": "Ultra T-Bond"
+                        },
+                        {
+                          "name": "EUREX:FGBL1!",
+                          "displayName": "Euro Bund"
+                        },
+                        {
+                          "name": "EUREX:FBTP1!",
+                          "displayName": "Euro BTP"
+                        },
+                        {
+                          "name": "EUREX:FGBM1!",
+                          "displayName": "Euro BOBL"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Forex",
+                      "originalName": "Forex",
+                      "symbols": [
+                        {
+                          "name": "FX:EURUSD",
+                          "displayName": "EUR to USD"
+                        },
+                        {
+                          "name": "FX:GBPUSD",
+                          "displayName": "GBP to USD"
+                        },
+                        {
+                          "name": "FX:USDJPY",
+                          "displayName": "USD to JPY"
+                        },
+                        {
+                          "name": "FX:USDCHF",
+                          "displayName": "USD to CHF"
+                        },
+                        {
+                          "name": "FX:AUDUSD",
+                          "displayName": "AUD to USD"
+                        },
+                        {
+                          "name": "FX:USDCAD",
+                          "displayName": "USD to CAD"
+                        }
+                      ]
+                    }
+                  ],
+                  "showSymbolLogo": true,
+                  "isTransparent": true,
+                  "colorTheme": "light",
+                  "locale": "en"
+                }
+                  </script>
+                </div>
+                <!-- TradingView Widget END --></div>
+
+
+                <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500 Index"
+    },
+    {
+      "proName": "FOREXCOM:NSXUSD",
+      "title": "US 100 Cash CFD"
+    },
+    {
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR to USD"
+    },
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "Bitcoin"
+    },
+    {
+      "proName": "BITSTAMP:ETHUSD",
+      "title": "Ethereum"
+    }
+  ],
+  "showSymbolLogo": true,
+  "isTransparent": true,
+  "displayMode": "adaptive",
+  "colorTheme": "dark",
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+          </div>
+
+          <div id="financial-news" class="content-section" style="display: none;">
+              <h2>Financial News</h2>
+              <div id="market-news">Loading latest news...</div>
+          </div>
+
+          <div id="search-stocks" class="content-section" style="display: none;">
+              <h2>Search Stocks</h2>
+              <div id="search-stocks-content">Search Stocks...</div>
+          </div>
+      </main>
+
+  </div>
+  
+  <!-- Signup Section -->
+  <div style="text-align: center; padding: 30px; background: #ecf0f1; margin-top: 20px; border-top: 5px solid #78ace7;">
+      <h2 style="font-size: 1.8rem; margin-bottom: 10px;">Sign Up for a More Personalized Dashboard</h2>
+      <p style="font-size: 1rem; color: #34495e;">Get access to advanced analytics, watchlists, and personalized stock insights.</p>
+      <button style="padding: 10px 20px; background:  #78ace7; color: white; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer;">Sign Up</button>
+      <button style="padding: 10px 20px; background: #2c3e50; color: white; ; border-radius: 5px; font-size: 1rem; cursor: pointer; margin-left: 10px;">Login</button>
+  </div>
+
+  <!-- Stock Heatmap Section -->
+   <div class="heatmap">
+  <h2 style="text-align: center; padding: 20px; border-top: 5px solid #78ace7;;background:transparent; color: rgb(19, 17, 17); margin-top: 20px;">Stock Heatmap</h2>
+  <p style="text-align: center; font-size: 1.2rem; max-width: 700px; margin: auto; padding-bottom: 20px;">
+      Explore real-time stock heatmaps for global markets, helping you visualize the strongest and weakest performing sectors.
+  </p>
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+ 
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-stock-heatmap.js" async>
+  {
+  "exchanges": [],
+  "dataSource": "SENSEX",
+  "grouping": "sector",
+  "blockSize": "market_cap_basic",
+  "blockColor": "change",
+  "locale": "en",
+  "symbolUrl": "",
+  "colorTheme": "dark",
+  "hasTopBar": false,
+  "isDataSetEnabled": false,
+  "isZoomEnabled": true,
+  "hasSymbolTooltip": true,
+  "isMonoSize": false,
+  "width": 1000,
+  "height": 700
+}
+  </script>
+</div>
+</div>
+<!-- TradingView Widget END -->
+ 
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
